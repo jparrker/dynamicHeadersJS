@@ -65,12 +65,16 @@ const roadmap = [
   roadmap.forEach((project) => {
     const tr = _("tr")
     const tdName = createTD(project.projectName)
-    const tdURL = createTD(project.projectURL)
     const tdEstimated = createTD(project.estimatedTime)
     const tdStart = createTD(project.dateStarted)
     const tdEnd = createTD(project.dateCompleted)
     const tdDuration = createTD(project.timeSpent)
-    
+    const tdURL = _("td")
+    const a = _("a")
+    a.href = project.projectURL
+    a.innerText = project.projectURL.split(".")[1]
+    tdURL.appendChild(a)
+
 
   tr.appendChild(tdName)
   tr.appendChild(tdURL)
